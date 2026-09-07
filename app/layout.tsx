@@ -21,8 +21,11 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
+// Path-based SVG favicon (villa/house icon)
+const svgFavicon = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0a'/%3E%3Cpath d='M50 25 L80 50 L70 50 L70 75 L30 75 L30 50 L20 50 Z' fill='none' stroke='%23c5a47e' stroke-width='6' stroke-linejoin='round'/%3E%3Crect x='42' y='55' width='16' height='20' fill='%23c5a47e' rx='2'/%3E%3C/svg%3E`;
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://serenevilla.com'),
+  metadataBase: new URL('https://serenevilla.vercel.app'),
   title: {
     default: 'Serene Villa — Luxury Guesthouse & Retreat',
     template: '%s | Serene Villa',
@@ -52,18 +55,21 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0a'/%3E%3Ctext x='50' y='65' font-family='Georgia, serif' font-size='55' fill='%23c5a47e' text-anchor='middle'%3ESV%3C/text%3E%3C/svg%3E",
-        type: 'image/svg+xml',
-      },
+      { url: svgFavicon, sizes: 'any', type: 'image/svg+xml' },
+      { url: svgFavicon, sizes: '16x16', type: 'image/svg+xml' },
+      { url: svgFavicon, sizes: '32x32', type: 'image/svg+xml' },
+      { url: svgFavicon, sizes: '192x192', type: 'image/svg+xml' },
+      { url: svgFavicon, sizes: '512x512', type: 'image/svg+xml' },
     ],
-    shortcut: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0a'/%3E%3Ctext x='50' y='65' font-family='Georgia, serif' font-size='55' fill='%23c5a47e' text-anchor='middle'%3ESV%3C/text%3E%3C/svg%3E",
-    apple: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0a'/%3E%3Ctext x='50' y='65' font-family='Georgia, serif' font-size='55' fill='%23c5a47e' text-anchor='middle'%3ESV%3C/text%3E%3C/svg%3E",
+    shortcut: svgFavicon,
+    apple: [
+      { url: svgFavicon, sizes: '180x180', type: 'image/svg+xml' },
+    ],
   },
   manifest: '/manifest.json',
   openGraph: {
     type: 'website',
-    url: 'https://serenevilla.com',
+    url: 'https://serenevilla.vercel.app',
     title: 'Serene Villa — Luxury Guesthouse & Retreat',
     description:
       'A luxury guesthouse nestled in nature, offering peace, elegance, and unforgettable experiences. Book your stay today.',
